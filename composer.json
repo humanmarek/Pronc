@@ -1,0 +1,75 @@
+{
+    "require": {
+        "php":              ">=5.3.2",
+        "symfony/symfony":  ">=2.0.10,<2.1.0-dev",
+        "doctrine/orm":     ">=2.1.0,<2.2.0-dev",
+        "twig/extensions":  "*",
+
+        "symfony/assetic-bundle":         "2.0.*",
+        "sensio/generator-bundle":        "2.0.*",
+        "sensio/framework-extra-bundle":  "2.0.*",
+        "sensio/distribution-bundle":     "2.0.*",
+        "jms/security-extra-bundle":      "1.0.*",
+
+        "twitter/bootstrap": "2.0.1",
+        "knplabs/knp-menu-bundle": "dev-master",
+        "ornicar/gravatar-bundle": "dev-master",
+        "behat/behat-bundle": "*",
+        "behat/mink-bundle": "*",
+        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "gedmo/doctrine-extensions":      "master-dev",
+        "mockery/mockery": ">=0.7.2",
+        "friendsofsymfony/user-bundle": "*"
+    },
+
+
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "twitter/bootstrap",
+                "version": "2.0.1",
+                "dist": {
+                    "url": "https://github.com/twitter/bootstrap/zipball/v2.0.1",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/twitter/bootstrap.git",
+                    "type": "git",
+                    "reference": "v2.0.1"
+                }
+            }
+        },
+        {
+            "type": "composer",
+            "url": "behat.org"
+        }
+    ],
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Acme": "src/",
+            "Pronc": "src/"
+        }
+    }
+}

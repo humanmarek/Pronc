@@ -1,0 +1,3 @@
+ProncRweshBundle_homepage:
+    pattern:  /
+    defaults: { _controller: ProncRweshBundle:Default:index }

@@ -1,4 +1,13 @@
-manifest/cache/
-manifest/logs/
-manifest/tmp/
-install-log.txt
+app/cache/*
+app/logs/*
+app/*.cache
+web/bundles/*
+web/uploads/*
+vendor
+src/Acme
+composer.phar
+composer.lock
+.buildpath
+.projecct
+.project
+.settings
